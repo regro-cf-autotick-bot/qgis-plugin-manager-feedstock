@@ -1,5 +1,5 @@
 {% set name = "qgis-plugin-manager" %}
-{% set version = "1.6.1" %}
+{% set version = "1.6.2" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/qgis-plugin-manager-{{ version }}.tar.gz
-  sha256: 0bd36384d601df1a9b10b07ba8a4b9986001fa8ef531e66cb8cf9567bc8b65e2
+  sha256: 47178e40c292721f1ead5e7c10ed582d6194ebfb9f52dd579e7cb3f5310b858b
 
 build:
   entry_points:
