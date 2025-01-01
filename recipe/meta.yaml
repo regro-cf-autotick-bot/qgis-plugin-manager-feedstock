@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/qgis-plugin-manager-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/qgis-plugin-manager-{{ version }}.tar.gz
   sha256: 0bd36384d601df1a9b10b07ba8a4b9986001fa8ef531e66cb8cf9567bc8b65e2
 
 build:
@@ -14,14 +14,14 @@ build:
     - qgis-plugin-manager = qgis_plugin_manager.__main__:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
-    - python >=3.7
+    - python {{ python_min }}
     - pip
   run:
-    - python >=3.7
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -31,6 +31,7 @@ test:
     - qgis-plugin-manager --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://github.com/3liz/qgis-plugin-manager
